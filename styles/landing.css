@@ -7,12 +7,16 @@ body.landing{
   background: url(../assets/images/bloc_jams_bg.jpeg) no-repeat center center;
   background-size: cover;
 }
-.hero-content .hero-title {
+#turnUp {
   position: absolute;
   top: 40%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  transform: translateY(-50%);
+  opacity: 0.2;
+  -webkit-transform: scaleX(0.5) translateY(10%);
+  -moz-transform: scaleX(0.5) translateY(10%);
+  transform: scaleX(0.5) translateY(10%);
+  -webkit-transition: all 2s ease-in 2s;
+  -moz-transition: all 2s ease-in 2s;
+  transition: all 2s ease-in 2s;
   width: 100%;
   text-align: center;
   font-size: 4rem;
@@ -21,6 +25,7 @@ body.landing{
   letter-spacing: 0.5rem;
   text-shadow: 1px 1px 0px rgb(58,23,63);
 }
+
 .selling-points {
    position: relative;
 }
