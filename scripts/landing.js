@@ -20,16 +20,16 @@ var pointsArray = document.getElementsByClassName('point');
 
 var animatePoints = function(points) {
 
-  function revealPoint(index){
-    index.style.opacity = 1;
-    index.style.transform = "scaleX(1) translateY(0)";
-    index.style.msTransform = "scaleX(1) translateY(0)";
-    index.style.WebkitTransform = "scaleX(1) translateY(0)";
-  }
-  for(var i=0; i<points.length; i++){
-    revealPoint(points[i]);
-  }
+  forEach(points, revealPoint);
+
 };
+
+function revealPoint(index){
+  index.style.opacity = 1;
+  index.style.transform = "scaleX(1) translateY(0)";
+  index.style.msTransform = "scaleX(1) translateY(0)";
+  index.style.WebkitTransform = "scaleX(1) translateY(0)";
+}
 
 var animateHeroTitle = function() {
   var textNode = document.getElementById('turnUp');
