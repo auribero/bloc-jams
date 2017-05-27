@@ -26,6 +26,20 @@ var albumMarconi = {
       {title: 'Wrong phone number', duration: '2:15'}
   ]
 };
+var albumKuma = {
+  title: 'Kuaga',
+  artist: 'Kuma',
+  label: 'Cloud',
+  year: '2013',
+  albumArtUrl: 'assets/images/album_covers/17.png',
+  songs: [
+    {title: 'Bear is the name', duration: '5:13'},
+    {title: 'Sharing is not caring', duration: '2:56'},
+    {title: 'Squeakers, beware', duration: '3:56'},
+    {title: 'Pets are welcomed', duration: '4:23'},
+    {title: 'Snacks are even better', duration: '4:21'}
+  ]
+}
 
 var createSongRow = function(songNumber, songName, songLength){
   var template =
@@ -47,15 +61,21 @@ var setCurrentAlbum = function(album){
 
   albumTitle.firstChild.nodeValue = album.title;
   albumArtist.firstChild.nodeValue - album.artist;
-  albumReleaseInfo.firstChild.nodeValue = album.year + '' + album.label;
+  albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
   albumImage.setAttribute('src', album.albumArtUrl);
 
   albumSongList.innerHTML = '';
     for(var i=0; i<album.songs.length; i++){
       albumSongList.innerHTML += createSongRow(i+1, album.songs[i].title, album.songs[i].duration);
     }
+
+  albumImage.addEventListener('click', function(event){
+    if(album == albumPicasso){setCurrentAlbum(albumMarconi);}
+    if(album == albumMarconi){setCurrentAlbum(albumKuma);}
+    if(album == albumKuma){setCurrentAlbum(albumPicasso);}
+  });
 };
 
 window.onload = function(){
   setCurrentAlbum(albumPicasso);
-};
+}
