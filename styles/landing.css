@@ -7,7 +7,7 @@ body.landing{
   background: url(../assets/images/bloc_jams_bg.jpeg) no-repeat center center;
   background-size: cover;
 }
-#turnUp {
+.hero-content .hero-title {
   position: absolute;
   top: 40%;
   opacity: 0.2;
